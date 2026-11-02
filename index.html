@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siya Koppikar · Machine Learning Engineer &amp; Data Scientist</title>
+<meta name="description" content="Siya Koppikar: ML engineer working on LLM reliability, ML systems and evaluation. NYU MS in Data Science.">
+<meta property="og:title" content="Siya Koppikar · Machine Learning Engineer &amp; Data Scientist">
+<meta property="og:description" content="LLM reliability, ML systems and evaluation. NYU MS in Data Science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f141a;
+    --surface: #151b23;
+    --surface-2: #1b232d;
+    --border: #232c37;
+    --text: #e6edf3;
+    --text-2: #a8b3bf;
+    --muted: #6e7681;
+    --accent: #5eead4;
+    --accent-dim: rgba(94, 234, 212, 0.12);
+    --radius: 12px;
+    --max: 1040px;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(15, 20, 26, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-family: var(--mono); font-size: 14px; text-decoration: none; color: var(--text); }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text-2); font-size: 14px; transition: color .15s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 96px 0 72px; }
+  .eyebrow { font-family: var(--mono); color: var(--accent); font-size: 14px; margin-bottom: 16px; }
+  h1 { font-size: clamp(40px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 700; }
+  .tagline { font-size: clamp(20px, 2.6vw, 26px); color: var(--text-2); font-weight: 500; margin-top: 12px; letter-spacing: -0.01em; }
+  .about { max-width: 640px; color: var(--text-2); margin-top: 24px; font-size: 17px; }
+  .about strong { color: var(--text); font-weight: 500; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 500;
+    text-decoration: none; border: 1px solid var(--border); color: var(--text);
+    background: var(--surface); transition: border-color .15s, color .15s, background .15s;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); color: #062a24; border-color: var(--accent); }
+  .btn.primary:hover { background: #7ff0dd; color: #062a24; }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* Sections */
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  h2 { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+  .section-lead { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 32px; }
+
+  /* Projects */
+  .projects { display: grid; gap: 24px; }
+  .project {
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px; transition: border-color .2s;
+  }
+  .project:hover { border-color: #2f3b48; }
+  .project figure { align-self: start; }
+  .project figure img { border-radius: 8px; border: 1px solid var(--border); }
+  .project figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .meta { font-family: var(--mono); font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
+  .meta .tag-new { color: var(--accent); }
+  h3 { font-size: 21px; line-height: 1.3; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .summary { color: var(--text-2); margin-bottom: 14px; }
+  .project ul { list-style: none; display: grid; gap: 8px; margin-bottom: 18px; }
+  .project li { position: relative; padding-left: 18px; color: var(--text-2); font-size: 15px; }
+  .project li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .project li strong { color: var(--text); font-weight: 600; }
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+  .stack span { font-family: var(--mono); font-size: 12px; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--border); padding: 3px 9px; border-radius: 999px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .links a {
+    font-size: 13.5px; font-weight: 500; text-decoration: none; color: var(--accent);
+    border: 1px solid rgba(94, 234, 212, 0.35); padding: 6px 12px; border-radius: 6px;
+    transition: background .15s;
+  }
+  .links a:hover { background: var(--accent-dim); }
+
+  /* Timeline */
+  .timeline { display: grid; gap: 16px; }
+  .item { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .item:last-child { border-bottom: 0; }
+  .when { font-family: var(--mono); font-size: 13px; color: var(--muted); padding-top: 3px; }
+  .item h4 { font-size: 17px; font-weight: 600; }
+  .org { color: var(--text-2); font-size: 15px; margin-bottom: 8px; }
+  .item p, .item li { color: var(--text-2); font-size: 15px; }
+  .item ul { padding-left: 18px; display: grid; gap: 4px; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .skill { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .skill h4 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+  .skill p { color: var(--text-2); font-size: 14px; line-height: 1.7; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 80px 0 96px; }
+  .contact .section-lead { margin-bottom: 12px; }
+  .contact p { color: var(--text-2); max-width: 520px; margin: 0 auto 28px; }
+  .contact p.section-lead { color: var(--text); margin-bottom: 12px; }
+  .contact .actions { justify-content: center; }
+  footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: 13px; font-family: var(--mono); }
+
+  @media (max-width: 820px) {
+    .project { grid-template-columns: 1fr; padding: 20px; }
+    .project figure { order: -1; }
+    .item { grid-template-columns: 1fr; gap: 4px; }
+    .nav-links { gap: 16px; }
+    .hero { padding: 64px 0 48px; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    .nav-links li:nth-child(n+3) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">siya<span>.</span>koppikar</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Hi, I'm</p>
+    <h1>Siya Koppikar</h1>
+    <p class="tagline">Machine Learning Engineer &amp; Data Scientist</p>
+    <p class="about">
+      I'm a recent <strong>MS in Data Science</strong> graduate from <strong>NYU</strong>, with a Bachelor's in Computer Science and Engineering.
+      I work across large language models, computer vision, and ML systems, and I care most about whether a model actually holds up:
+      at NYU I fine-tuned LLMs with reinforcement learning, trained self-supervised vision models, and helped build a real-time ICU pipeline that runs 857× faster than baseline.
+      Since graduating, I've been reproducing research on detecting LLM hallucinations.
+      I'm looking for <strong>Machine Learning Engineer and Data Scientist</strong> roles where I can keep building and learning.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Resume</a>
+      <a class="btn" href="https://github.com/siyakoppikar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 00-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 015.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0012 .5z"/></svg>GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/siyakoppikar3006" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="btn" href="mailto:seeyakoppikar02@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="section-lead">Selected work</p>
+    <div class="projects">
+
+      <article class="project">
+        <div>
+          <p class="meta"><span class="tag-new">Independent</span> · Oct 2026 – present</p>
+          <h3>Semantic Entropy for LLM Hallucination Detection</h3>
+          <p class="summary">Can you tell when an LLM is making something up, without knowing the right answer? I reproduced the semantic entropy method (Farquhar et al., <em>Nature</em> 2024) from scratch and tested when it actually helps.</p>
+          <ul>
+            <li>Sample 10 answers per question, group them by meaning with an NLI model (DeBERTa-MNLI), and measure entropy over meanings instead of wordings.</li>
+            <li>Reached <strong>0.80 AUROC</strong> detecting wrong answers on TriviaQA with Qwen2.5-3B.</li>
+            <li>With sentence-length answers, semantic entropy beat naive entropy by <strong>+0.076 AUROC</strong> (95% CI +0.034 to +0.122). With short answers the gap vanished, because there was little rewording to correct for.</li>
+          </ul>
+          <div class="stack"><span>PyTorch</span><span>Hugging Face</span><span>Qwen2.5</span><span>DeBERTa-MNLI</span><span>Colab</span></div>
+          <div class="links">
+            <a href="https://github.com/siyakoppikar/semantic-entropy-hallucination-detection" target="_blank" rel="noopener">Code &amp; results →</a>
+            <a href="https://doi.org/10.1038/s41586-024-07421-0" target="_blank" rel="noopener">Original paper →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/se-auroc.png" alt="Bar chart: on TriviaQA, semantic entropy AUROC 0.801 vs naive entropy 0.789 for short answers, and 0.799 vs 0.723 for sentence answers" loading="lazy">
+          <figcaption>Semantic entropy holds at 0.80 while naive entropy drops once answers get longer.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="meta">Capstone · 2-person team · Sep 2025 – Dec 2025</p>
+          <h3>Market-Aligned LLM Trading Signals</h3>
+          <p class="summary">Instead of training an LLM to label news as positive or negative, train it on what the market actually did next. Built on the FinRL Contest 2024 Task II setup.</p>
+          <ul>
+            <li>Built a reinforcement-learning-from-market-feedback pipeline: a custom Gymnasium environment with rewards from realized 3-day returns, and <strong>LoRA + REINFORCE</strong> fine-tuning of LLaMA 3.2-3B in 4-bit.</li>
+            <li>Built a long-short backtesting harness: rank 7 large-cap stocks daily from news, long the top 3, short the bottom 3, hold 3 days.</li>
+            <li>In our evaluation, an RLMF-tuned LLaMA beat the base model <strong>408.8% vs 248.2%</strong> cumulative return (58.2% vs 53.5% win rate) on Oct 2022 – Dec 2023.</li>
+          </ul>
+          <div class="stack"><span>LLaMA 3.2</span><span>PEFT / LoRA</span><span>REINFORCE</span><span>Gymnasium</span><span>PyTorch</span></div>
+          <div class="links">
+            <a href="https://github.com/siyakoppikar/llm-engineered-trading-signals" target="_blank" rel="noopener">Code →</a>
+            <a href="https://github.com/siyakoppikar/llm-engineered-trading-signals/blob/main/docs/Capstone%20Report.pdf" target="_blank" rel="noopener">Report →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/llm-trading.png" alt="Bar charts: cumulative return 248.2% base vs 408.8% RLMF-tuned; win rate 53.5% vs 58.2%" loading="lazy">
+          <figcaption>Historical backtest, not live trading. No transaction costs or slippage.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="meta">Team of 5 · Feb 2026 – Apr 2026</p>
+          <h3>PulseStream: Real-Time ICU Anomaly Detection</h3>
+          <p class="summary">A live monitoring pipeline for ICU vital signs, and a study of how far you can push Python performance on the detection step.</p>
+          <ul>
+            <li>Benchmarked one detection kernel <strong>nine ways</strong> (Python → NumPy → Numba → Cython → CUDA), reaching an <strong>857× speedup</strong> at 50,000 simulated patients (4.2 s → under 5 ms), with identical outputs across implementations.</li>
+            <li>Two-tier detector: cheap Z-score/IQR screening on every reading, escalating to an Isolation Forest only for suspicious patients.</li>
+            <li>Served through FastAPI with live Supabase alerts to a Next.js dashboard.</li>
+          </ul>
+          <div class="stack"><span>Numba</span><span>Cython</span><span>CUDA</span><span>FastAPI</span><span>Supabase</span><span>scikit-learn</span></div>
+          <div class="links">
+            <a href="https://github.com/siyakoppikar/real-time-icu-anomaly-detection-numba-fastapi" target="_blank" rel="noopener">Code →</a>
+            <a href="https://github.com/siyakoppikar/real-time-icu-anomaly-detection-numba-fastapi/blob/main/ADV_project_report.pdf" target="_blank" rel="noopener">Report →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/icu-dashboard.png" alt="PulseStream dashboard: patient list, live vitals cards and a 30-reading vital signs chart with flagged anomalies" loading="lazy">
+          <figcaption>Live dashboard: per-patient vitals with anomalies flagged in real time.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="meta">Team of 3 · Sep 2025 – Dec 2025</p>
+          <h3>Self-Supervised Visual Learning with MoCo v2</h3>
+          <p class="summary">Learning useful image features from ~500K unlabeled images, then testing how well they transfer with nothing but a linear classifier on top.</p>
+          <ul>
+            <li>Pretrained a ResNet-50 with MoCo v2 (momentum encoder, 65K-negative queue) for 200 epochs at 96×96.</li>
+            <li>Frozen-encoder linear probes on three datasets, reaching <strong>69.7% top-1 on MiniImageNet</strong> on the held-out leaderboard.</li>
+            <li>Found that upsampling 96→128 px at inference improves a frozen encoder, most on fine-grained (CUB-200) and scene (SUN397) data.</li>
+          </ul>
+          <div class="stack"><span>PyTorch</span><span>ResNet-50</span><span>Contrastive learning</span><span>SLURM</span></div>
+          <div class="links">
+            <a href="https://github.com/siyakoppikar/moco-v2-self-supervised-learning" target="_blank" rel="noopener">Code →</a>
+            <a href="https://github.com/siyakoppikar/moco-v2-self-supervised-learning/blob/main/Final_Report.pdf" target="_blank" rel="noopener">Report →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/moco.png" alt="Bar chart: linear-probe validation accuracy at 96 px vs 128 px: CUB-200 22.9 to 26.9, MiniImageNet 65.9 to 68.0, SUN397 38.9 to 42.3" loading="lazy">
+          <figcaption>Same frozen encoder, same images; only the inference input size changes.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="meta">Team of 3 · 3rd place in class competition · Oct 2025 – Dec 2025</p>
+          <h3>Credit Risk: 1-Year Probability of Default</h3>
+          <p class="summary">An interpretable default-risk model for private firms, built the way a bank would need it: no peeking into the future, and explainable to a regulator.</p>
+          <ul>
+            <li>Built a leakage-safe target on ~1M firm-year records, with a 4-month reporting lag and a 12-month prediction horizon.</li>
+            <li>Turned noisy financial ratios into monotonic risk features with quantile transforms, then fit an L2 logistic regression.</li>
+            <li>AUC <strong>~0.80</strong> across 2008–2011 walk-forward years and <strong>0.917</strong> on the 2012 holdout. Built the CLI scoring harness that runs the full pipeline on new data.</li>
+          </ul>
+          <div class="stack"><span>scikit-learn</span><span>pandas</span><span>SciPy</span><span>statsmodels</span></div>
+          <div class="links">
+            <a href="https://github.com/siyakoppikar/credit-risk-pd-modeling" target="_blank" rel="noopener">Code →</a>
+            <a href="https://github.com/siyakoppikar/credit-risk-pd-modeling/blob/main/docs/Team%20Turquoise%20-%20Pitch%20Deck.pdf" target="_blank" rel="noopener">Slides →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/credit-risk.png" alt="Line chart of walk-forward AUC: 0.804 in 2008, 0.806 in 2009, 0.789 in 2010, 0.799 in 2011, 0.917 on the 2012 holdout" loading="lazy">
+          <figcaption>Each point: trained only on earlier years, tested on the next year's firms.</figcaption>
+        </figure>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="section-lead">Where I've worked</p>
+    <div class="timeline">
+      <div class="item">
+        <p class="when">Sep 2025 – Dec 2025</p>
+        <div>
+          <h4>Grader, Optimization &amp; Computational Linear Algebra</h4>
+          <p class="org">NYU Center for Data Science · New York, NY</p>
+          <p>Graded assignments for DS-GA 1014, a graduate course in optimization and linear algebra for data science.</p>
+        </div>
+      </div>
+      <div class="item">
+        <p class="when">Jan 2024 – Jun 2024</p>
+        <div>
+          <h4>Software Developer Intern</h4>
+          <p class="org">FairShare IT Services Pvt. Ltd. · Pune, India</p>
+          <ul>
+            <li>Built web applications in Python, C#, Laravel and PHP, including a document-processing site that removes image alt-text metadata.</li>
+            <li>Automated upload, parsing, metadata extraction, modification and downloadable output.</li>
+            <li>Worked across the lifecycle, from requirements and architecture through integration, testing and QA.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <p class="when">Aug 2022 – Nov 2022</p>
+        <div>
+          <h4>Business Analyst Intern</h4>
+          <p class="org">Erisha E-Mobility · Remote, India</p>
+          <ul>
+            <li>Analyzed market, competitor and consumer data with Python, Excel and Power BI to support risk and supply-chain planning.</li>
+            <li>Built recurring dashboards to surface operational bottlenecks for stakeholders.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:48px">Education</h2>
+    <div class="timeline">
+      <div class="item">
+        <p class="when">Sep 2024 – May 2026</p>
+        <div>
+          <h4>MS in Data Science</h4>
+          <p class="org">New York University · New York, NY</p>
+          <p>Coursework: Machine Learning, Deep Learning, Natural Language Processing, Computer Vision, Big Data, Probability &amp; Statistics</p>
+        </div>
+      </div>
+      <div class="item">
+        <p class="when">Sep 2020 – May 2024</p>
+        <div>
+          <h4>B.Tech in Computer Science &amp; Engineering</h4>
+          <p class="org">MIT World Peace University · Pune, India</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="section-lead">What I work with</p>
+    <div class="skills">
+      <div class="skill"><h4>Languages</h4><p>Python, SQL, Java, JavaScript, R, PHP</p></div>
+      <div class="skill"><h4>ML &amp; LLMs</h4><p>PyTorch, Hugging Face, PEFT/LoRA, scikit-learn, reinforcement learning, self-supervised learning, LLM evaluation</p></div>
+      <div class="skill"><h4>ML engineering</h4><p>FastAPI, Numba, Cython, CUDA, benchmarking, model validation, feature engineering</p></div>
+      <div class="skill"><h4>Data &amp; tools</h4><p>PySpark, Spark SQL, HDFS, Parquet, ETL, PostgreSQL, Git, Linux, GCP, Jupyter</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="section-lead">Let's talk</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:seeyakoppikar02@gmail.com">seeyakoppikar02@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/siyakoppikar3006" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/siyakoppikar" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Siya Koppikar</div>
+</footer>
+
+</body>
+</html>

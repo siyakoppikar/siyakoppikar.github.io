@@ -218,28 +218,6 @@
 
       <article class="project">
         <div>
-          <p class="meta">Capstone · 2-person team · Sep 2025 – Dec 2025</p>
-          <h3>Market-Aligned LLM Trading Signals</h3>
-          <p class="summary">Instead of training an LLM to label news as positive or negative, train it on what the market actually did next. Built on the FinRL Contest 2024 Task II setup.</p>
-          <ul>
-            <li>Built a reinforcement-learning-from-market-feedback pipeline: a custom Gymnasium environment with rewards from realized 3-day returns, and <strong>LoRA + REINFORCE</strong> fine-tuning of LLaMA 3.2-3B in 4-bit.</li>
-            <li>Built a long-short backtesting harness: rank 7 large-cap stocks daily from news, long the top 3, short the bottom 3, hold 3 days.</li>
-            <li>In our evaluation, an RLMF-tuned LLaMA beat the base model <strong>408.8% vs 248.2%</strong> cumulative return (58.2% vs 53.5% win rate) on Oct 2022 – Dec 2023.</li>
-          </ul>
-          <div class="stack"><span>LLaMA 3.2</span><span>PEFT / LoRA</span><span>REINFORCE</span><span>Gymnasium</span><span>PyTorch</span></div>
-          <div class="links">
-            <a href="https://github.com/siyakoppikar/llm-engineered-trading-signals" target="_blank" rel="noopener">Code →</a>
-            <a href="https://github.com/siyakoppikar/llm-engineered-trading-signals/blob/main/docs/Capstone%20Report.pdf" target="_blank" rel="noopener">Report →</a>
-          </div>
-        </div>
-        <figure>
-          <img src="assets/llm-trading.png" alt="Bar charts: cumulative return 248.2% base vs 408.8% RLMF-tuned; win rate 53.5% vs 58.2%" loading="lazy">
-          <figcaption>Historical backtest, not live trading. No transaction costs or slippage.</figcaption>
-        </figure>
-      </article>
-
-      <article class="project">
-        <div>
           <p class="meta">Team of 5 · Feb 2026 – Apr 2026</p>
           <h3>PulseStream: Real-Time ICU Anomaly Detection</h3>
           <p class="summary">A live monitoring pipeline for ICU vital signs, and a study of how far you can push Python performance on the detection step.</p>
@@ -262,28 +240,6 @@
 
       <article class="project">
         <div>
-          <p class="meta">Team of 3 · Sep 2025 – Dec 2025</p>
-          <h3>Self-Supervised Visual Learning with MoCo v2</h3>
-          <p class="summary">Learning useful image features from ~500K unlabeled images, then testing how well they transfer with nothing but a linear classifier on top.</p>
-          <ul>
-            <li>Pretrained a ResNet-50 with MoCo v2 (momentum encoder, 65K-negative queue) for 200 epochs at 96×96.</li>
-            <li>Frozen-encoder linear probes on three datasets, reaching <strong>69.7% top-1 on MiniImageNet</strong> on the held-out leaderboard.</li>
-            <li>Found that upsampling 96→128 px at inference improves a frozen encoder, most on fine-grained (CUB-200) and scene (SUN397) data.</li>
-          </ul>
-          <div class="stack"><span>PyTorch</span><span>ResNet-50</span><span>Contrastive learning</span><span>SLURM</span></div>
-          <div class="links">
-            <a href="https://github.com/siyakoppikar/moco-v2-self-supervised-learning" target="_blank" rel="noopener">Code →</a>
-            <a href="https://github.com/siyakoppikar/moco-v2-self-supervised-learning/blob/main/Final_Report.pdf" target="_blank" rel="noopener">Report →</a>
-          </div>
-        </div>
-        <figure>
-          <img src="assets/moco.png" alt="Bar chart: linear-probe validation accuracy at 96 px vs 128 px: CUB-200 22.9 to 26.9, MiniImageNet 65.9 to 68.0, SUN397 38.9 to 42.3" loading="lazy">
-          <figcaption>Same frozen encoder, same images; only the inference input size changes.</figcaption>
-        </figure>
-      </article>
-
-      <article class="project">
-        <div>
           <p class="meta">Team of 3 · 3rd place in class competition · Oct 2025 – Dec 2025</p>
           <h3>Credit Risk: 1-Year Probability of Default</h3>
           <p class="summary">An interpretable default-risk model for private firms, built the way a bank would need it: no peeking into the future, and explainable to a regulator.</p>
@@ -301,6 +257,50 @@
         <figure>
           <img src="assets/credit-risk.png" alt="Line chart of walk-forward AUC: 0.804 in 2008, 0.806 in 2009, 0.789 in 2010, 0.799 in 2011, 0.917 on the 2012 holdout" loading="lazy">
           <figcaption>Each point: trained only on earlier years, tested on the next year's firms.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="meta">Capstone · 2-person team · Sep 2025 – Dec 2025</p>
+          <h3>Market-Aligned LLM Trading Signals</h3>
+          <p class="summary">Instead of training an LLM to label news as positive or negative, train it on what the market actually did next. Built on the FinRL Contest 2024 Task II setup.</p>
+          <ul>
+            <li>Built a reinforcement-learning-from-market-feedback pipeline: a custom Gymnasium environment with rewards from realized 3-day returns, and <strong>LoRA + REINFORCE</strong> fine-tuning of LLaMA 3.2-3B in 4-bit.</li>
+            <li>Built a long-short backtesting harness: rank 7 large-cap stocks daily from news, long the top 3, short the bottom 3, hold 3 days.</li>
+            <li>In our evaluation, an RLMF-tuned LLaMA beat the base model <strong>408.8% vs 248.2%</strong> cumulative return (58.2% vs 53.5% win rate) on Oct 2022 – Dec 2023.</li>
+          </ul>
+          <div class="stack"><span>LLaMA 3.2</span><span>PEFT / LoRA</span><span>REINFORCE</span><span>Gymnasium</span><span>PyTorch</span></div>
+          <div class="links">
+            <a href="https://github.com/siyakoppikar/llm-engineered-trading-signals" target="_blank" rel="noopener">Code →</a>
+            <a href="https://github.com/siyakoppikar/llm-engineered-trading-signals/blob/main/docs/Capstone%20Report.pdf" target="_blank" rel="noopener">Report →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/llm-trading.png" alt="Bar charts: cumulative return 248.2% base vs 408.8% RLMF-tuned; win rate 53.5% vs 58.2%" loading="lazy">
+          <figcaption>Historical backtest, not live trading. No transaction costs or slippage.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="meta">Team of 3 · Sep 2025 – Dec 2025</p>
+          <h3>Self-Supervised Visual Learning with MoCo v2</h3>
+          <p class="summary">Learning useful image features from ~500K unlabeled images, then testing how well they transfer with nothing but a linear classifier on top.</p>
+          <ul>
+            <li>Pretrained a ResNet-50 with MoCo v2 (momentum encoder, 65K-negative queue) for 200 epochs at 96×96.</li>
+            <li>Frozen-encoder linear probes on three datasets, reaching <strong>69.7% top-1 on MiniImageNet</strong> on the held-out leaderboard.</li>
+            <li>Found that upsampling 96→128 px at inference improves a frozen encoder, most on fine-grained (CUB-200) and scene (SUN397) data.</li>
+          </ul>
+          <div class="stack"><span>PyTorch</span><span>ResNet-50</span><span>Contrastive learning</span><span>SLURM</span></div>
+          <div class="links">
+            <a href="https://github.com/siyakoppikar/moco-v2-self-supervised-learning" target="_blank" rel="noopener">Code →</a>
+            <a href="https://github.com/siyakoppikar/moco-v2-self-supervised-learning/blob/main/Final_Report.pdf" target="_blank" rel="noopener">Report →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/moco.png" alt="Bar chart: linear-probe validation accuracy at 96 px vs 128 px: CUB-200 22.9 to 26.9, MiniImageNet 65.9 to 68.0, SUN397 38.9 to 42.3" loading="lazy">
+          <figcaption>Same frozen encoder, same images; only the inference input size changes.</figcaption>
         </figure>
       </article>
 

@@ -115,7 +115,7 @@
   .item ul { padding-left: 18px; display: grid; gap: 4px; }
 
   /* Skills */
-  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .skill { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
   .skill h4 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
   .skill p { color: var(--text-2); font-size: 14px; line-height: 1.7; }
@@ -137,6 +137,7 @@
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   @media (max-width: 820px) {
+    .skills { grid-template-columns: repeat(2, 1fr); }
     .project { grid-template-columns: 1fr; padding: 20px; }
     .project figure { order: -1; }
     .item { grid-template-columns: 1fr; gap: 4px; }
@@ -144,6 +145,7 @@
     .hero { padding: 64px 0 48px; }
   }
   @media (max-width: 520px) {
+    .skills { grid-template-columns: 1fr; }
     .wrap { padding: 0 16px; }
     .nav-links li:nth-child(n+3) { display: none; }
   }
@@ -370,10 +372,11 @@
     <h2>Skills</h2>
     <p class="section-lead">What I work with</p>
     <div class="skills">
-      <div class="skill"><h4>Languages</h4><p>Python, SQL, Java, JavaScript, R, PHP</p></div>
-      <div class="skill"><h4>ML &amp; LLMs</h4><p>PyTorch, Hugging Face, PEFT/LoRA, scikit-learn, reinforcement learning, self-supervised learning, LLM evaluation</p></div>
-      <div class="skill"><h4>ML engineering</h4><p>FastAPI, Numba, Cython, CUDA, benchmarking, model validation, feature engineering</p></div>
-      <div class="skill"><h4>Data &amp; tools</h4><p>PySpark, Spark SQL, HDFS, Parquet, ETL, PostgreSQL, Git, Linux, GCP, Jupyter</p></div>
+      <div class="skill"><h4>Languages</h4><p>Python, SQL, R, Java, C++, JavaScript</p></div>
+      <div class="skill"><h4>Machine Learning &amp; AI</h4><p>PyTorch, Hugging Face, Scikit-learn, Deep Learning, LLMs &amp; Fine-Tuning (LoRA/PEFT), NLP, Reinforcement Learning, Computer Vision, Self-Supervised Learning</p></div>
+      <div class="skill"><h4>Statistics &amp; Data Science</h4><p>Statistical Analysis, Hypothesis Testing, Bootstrap Confidence Intervals, Predictive Modeling, Logistic Regression, Time-Series Validation, Feature Engineering, Model Evaluation</p></div>
+      <div class="skill"><h4>ML Engineering</h4><p>FastAPI, REST APIs, CUDA, Numba, Cython, Profiling &amp; Benchmarking, Quantization, pytest, CI</p></div>
+      <div class="skill"><h4>Data &amp; Tools</h4><p>pandas, NumPy, PySpark, Spark SQL, ETL Pipelines, PostgreSQL, Power BI, Excel, GCP, Git, Linux, Jupyter</p></div>
     </div>
   </div>
 </section>
